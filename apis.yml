@@ -1,23 +1,70 @@
 aid: arrivobioventuresllc
+
 name: Arrivobioventuresllc
-description: 'Arrivobioventuresllc is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://arrivobio.com/content/uploads/2025/01/Arrivo_transparent.png
+
+description: Arrivobioventuresllc, operating as Arrivo BioVentures, is a holding company overseeing Sirtsei Pharmaceuticals and Panafina Inc.,
+  developing innovative medicines such as SP-624 for major depressive disorder and RABI-767 for severe acute pancreatitis. The company focuses
+  on delivering meaningful health outcomes through advanced drug candidates and expanded access programs.
+
 url: https://raw.githubusercontent.com/api-evangelist/arrivobioventuresllc/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
-- Company
-apis: []
+- Biotechnology
+- Pharmaceuticals
+- Holding Company
+- Clinical Trials
+- Mental Health
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/arrivobioventuresllc-hosts.yml
+- type: Vendors
+  url: vendors/arrivobioventuresllc-vendors.yml
+- type: Newsroom
+  url: https://arrivobio.com/news/
+- type: DomainSecurity
+  url: security/arrivobioventuresllc-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/arrivobioventuresllc
+  url: https://arrivobio.com
+
+apis:
+- name: Arrivo Bio API
+  description: API surface discovered via host api.arrivobio.com but no machine-readable spec found.
+  humanURL: https://arrivobio.com
+  aid: arrivobioventuresllc:arrivo-bio-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL, or other contract found at api.arrivobio.com despite probing common spec endpoints.
+  evidence:
+  - url: https://api.arrivobio.com/openapi.json
+    status: 0
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
